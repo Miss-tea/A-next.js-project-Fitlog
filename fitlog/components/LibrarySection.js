@@ -6,13 +6,14 @@ export default function LibrarySection({ workouts = []}) {
     const [search , setSearch] = useState('');
     const [sortBy, setSortBy] = useState('default');
 
-    const filteredWorkouts = workouts.filter((workout) => {
+    const filteredWorkouts = workouts.filter((workout) => 
         workout.name?.toLowerCase().includes(search.toLowerCase()) ||
         workout.equipment?.toLowerCase().includes(search.toLowerCase()) ||
         workout.muscleGroups?.some((group) => group.toLowerCase().includes(search.toLowerCase()))
-    });
+    
+);
 
-    const sortedWorkouts =[...filteredWorkouts.sort((a, b) => {
+    const sortedWorkouts =[...filteredWorkouts].sort((a, b) => {
          if (sortBy === 'name') {
              return a.name.localeCompare(b.name);
          }
@@ -34,6 +35,7 @@ export default function LibrarySection({ workouts = []}) {
            <h2 className="text-2xl font-black uppercase text-white tracking-tight">
             Browse Workouts
           </h2>
+          </div>
           <div clasName="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <input 
               type="text"
@@ -43,8 +45,8 @@ export default function LibrarySection({ workouts = []}) {
               className="bg-[#121212] border border-zinc-800 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand transition-all placeholder:text-zinc-500 w-full sm:w-64"/>
              <select
              value={sortBy}
-             onChange={(e) => setSortBy(e.target.value)} className="bg-[#121212] border border-zinc-800 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand transition-all cursor-pointer"
-          >
+             onChange={(e) => setSortBy(e.target.value)} className="bg-[#121212] border border-zinc-800 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand transition-all cursor-pointer">
+                
             <option value="default">Sort by: Default</option>
             <option value="name">Name (A-Z)</option>
             <option value="rating">Highest Rated</option>
