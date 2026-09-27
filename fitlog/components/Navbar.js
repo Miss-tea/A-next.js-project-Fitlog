@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePlan } from '@/context/PlanContext';
-
+import Image from 'next/image';
 export default function Navbar() {
   const { plan, saved } = usePlan();
 
@@ -10,8 +10,14 @@ export default function Navbar() {
     <header className="w-full border-b border-zinc-900 bg-black sticky top-0 z-40">
       <div className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-[#c2f012] font-black text-xl tracking-wider">🏋️ FITLOG</span>
-        </Link>
+          <Image src="/logo.png"
+                          width={24}
+                          height={24}
+                          alt="Fitlog Logo"
+                          className="object-contain"  
+                          />
+                          <span className="font-extrabold text-xl tracking-wider text-white">FITLOG</span>
+                    </Link>
 
         <nav className="flex items-center bg-zinc-900/80 p-1 rounded-full border border-zinc-800">
           <Link
