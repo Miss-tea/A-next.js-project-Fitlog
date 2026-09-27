@@ -36,7 +36,7 @@ export default function LibrarySection({ workouts = []}) {
             Browse Workouts
           </h2>
           </div>
-          <div clasName="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <input 
               type="text"
               placeholder="Search workouts..."
@@ -46,7 +46,7 @@ export default function LibrarySection({ workouts = []}) {
              <select
              value={sortBy}
              onChange={(e) => setSortBy(e.target.value)} className="bg-[#121212] border border-zinc-800 text-white text-sm rounded-xl px-4 py-2.5 focus:outline-none focus:border-brand transition-all cursor-pointer">
-                
+
             <option value="default">Sort by: Default</option>
             <option value="name">Name (A-Z)</option>
             <option value="rating">Highest Rated</option>

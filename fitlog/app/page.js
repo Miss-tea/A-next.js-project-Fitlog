@@ -1,17 +1,19 @@
 import Image from "next/image";
 import Hero from '@/components/Hero';
+import LibrarySection from '@/components/LibrarySection';
+async function getWorkouts() {
+  const res = await fetch('https://api.api-store.workers.dev/api/fitlog');
+  if (!res.ok){
+    throw new Error('Failed to fetch workouts');
+  }
+  return res.json();
+}
 export default async function HomePage() {
- 
+ const workouts = await getWorkouts();
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <Hero/>
-        <section id="library" className="scroll-mt-8">
-           <h2 className="text-brand font-bold text-xs tracking-widest uppercase mb-6">
-            THE LIBRARY
-           </h2>
-
-        </section>
-        </div>
-  
+    <main className="min-h-screen bg-black text-white py-8">
+      <Hero />
+      <LibrarySection workouts={workouts} />
+    </main>
   );
 }

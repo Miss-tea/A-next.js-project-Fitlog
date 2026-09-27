@@ -9,7 +9,7 @@ export default function Hero() {
                 <span className="text-brand font-bold text-xs tracking-widest uppercase inline-block">
                     WORKOUT LIBRARY
                 </span>
-            <h1 classname="font-['Bebas_Neue',sans-serif] text-5xl md:text-6xl font-black uppercase tracking-tight text-white leading-none">
+            <h1 className="font-['Bebas_Neue',sans-serif] text-5xl md:text-6xl font-black uppercase tracking-tight text-white leading-none">
                 TRAIN WITH INTENT. LOG EVERY SET.
                 </h1>  
              <p className="text-zinc-400 text-sm md:text-base max-w-md leading-relaxed">

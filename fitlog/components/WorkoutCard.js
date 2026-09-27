@@ -9,7 +9,7 @@ export default function WorkoutCard({ workout }) {
         muscleGroups = [],
         equipment,
         duration,
-        calories,
+        caloriesBurned,
         rating,
     } = workout;
     return (
@@ -50,11 +50,11 @@ export default function WorkoutCard({ workout }) {
         </div>    
         <div className="flex items-center gap-1">
             <span>🔥</span>
-            <span>{calories ? `${calories} kcal` : '120 kcal'}</span>
+            <span>{caloriesBurned} kcal</span>
             </div>
             <div className="flex items-center gap-1 text-brand font-bold">
             <span>★</span>
-            <span>{rating || '4.8'}</span>
+            <span>{rating}</span>
             </div>
         </div>
 
